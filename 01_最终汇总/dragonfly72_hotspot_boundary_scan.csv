@@ -1,0 +1,6 @@
+topology,endpoints,traffic,injection_rate,seed,status,evidence_use
+dragonfly72,72,hotspotmix,0.02,101,STABLE,boundary_scan_only_not_five_seed_mean
+dragonfly72,72,hotspotmix,0.04,101,STABLE,boundary_scan_only_not_five_seed_mean
+dragonfly72,72,hotspotmix,0.06,101,UNSTABLE,boundary_scan_only_not_five_seed_mean
+dragonfly72,72,hotspotmix,0.08,101,UNSTABLE,boundary_scan_only_not_five_seed_mean
+dragonfly72,72,hotspotmix,0.1,101,UNSTABLE,boundary_scan_only_not_five_seed_mean
