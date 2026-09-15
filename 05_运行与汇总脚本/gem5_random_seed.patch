@@ -1,0 +1,25 @@
+diff --git a/configs/example/garnet_synth_traffic.py b/configs/example/garnet_synth_traffic.py
+--- a/configs/example/garnet_synth_traffic.py
++++ b/configs/example/garnet_synth_traffic.py
+@@ -126,6 +126,13 @@ parser.add_argument(
+     "uniformly distributed across all other destinations.",
+ )
+ 
++parser.add_argument(
++    "--random-seed",
++    type=int,
++    default=5489,
++    help="Seed for synthetic traffic generation.",
++)
++
+ parser.add_argument(
+     "--inj-vnet",
+     type=int,
+@@ -143,6 +150,7 @@ Ruby.define_options(parser)
+ 
+ args = parser.parse_args()
++m5.core.seedRandom(args.random_seed)
+ 
+ cpus = [
+     GarnetSyntheticTraffic(
+         num_packets_max=args.num_packets_max,

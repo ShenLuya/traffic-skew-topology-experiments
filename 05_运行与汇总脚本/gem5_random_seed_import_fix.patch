@@ -1,0 +1,20 @@
+diff --git a/configs/example/garnet_synth_traffic.py b/configs/example/garnet_synth_traffic.py
+--- a/configs/example/garnet_synth_traffic.py
++++ b/configs/example/garnet_synth_traffic.py
+@@ -26,6 +26,7 @@
+ # Author: Tushar Krishna
+ 
+ import m5
++import _m5.core
+ from m5.objects import *
+ from m5.defines import buildEnv
+ from m5.util import addToPath
+@@ -145,7 +146,7 @@ Ruby.define_options(parser)
+ 
+ args = parser.parse_args()
+-m5.core.seedRandom(args.random_seed)
++_m5.core.seedRandom(args.random_seed)
+ 
+ cpus = [
+     GarnetSyntheticTraffic(
+         num_packets_max=args.num_packets_max,

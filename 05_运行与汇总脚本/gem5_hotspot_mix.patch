@@ -1,0 +1,112 @@
+diff --git a/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.py b/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.py
+index 0000000..0000000 100644
+--- a/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.py
++++ b/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.py
+@@ -53,6 +53,12 @@ class GarnetSyntheticTraffic(ClockedObject):
+         "Send only to this dest. \
+                                  Default depends on traffic_type",
+     )
++    hotspot_dest = Param.Int(-1, "Hotspot destination; -1 disables hotspot mix")
++    hotspot_percent = Param.Int(
++        0,
++        "Percentage sent to hotspot_dest; remaining traffic is uniform "
++        "across all other destinations",
++    )
+     traffic_type = Param.String("uniform_random", "Traffic type")
+     inj_rate = Param.Float(0.1, "Packet injection rate")
+     inj_vnet = Param.Int(
+diff --git a/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.hh b/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.hh
+index 0000000..0000000 100644
+--- a/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.hh
++++ b/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.hh
+@@ -124,6 +124,8 @@ class GarnetSyntheticTraffic : public ClockedObject
+     int numPacketsSent;
+     int singleSender;
+     int singleDest;
++    int hotspotDest;
++    int hotspotPercent;
+ 
+     std::string trafficType; // string
+     TrafficType traffic; // enum from string
+diff --git a/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.cc b/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.cc
+index 0000000..0000000 100644
+--- a/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.cc
++++ b/src/cpu/testers/garnet_synthetic_traffic/GarnetSyntheticTraffic.cc
+@@ -87,6 +87,8 @@ GarnetSyntheticTraffic::GarnetSyntheticTraffic(const Params &p)
+       numPacketsSent(0),
+       singleSender(p.single_sender),
+       singleDest(p.single_dest),
++      hotspotDest(p.hotspot_dest),
++      hotspotPercent(p.hotspot_percent),
+       trafficType(p.traffic_type),
+       injRate(p.inj_rate),
+       injVnet(p.inj_vnet),
+@@ -105,6 +107,15 @@ GarnetSyntheticTraffic::GarnetSyntheticTraffic(const Params &p)
+     }
+     traffic = trafficStringToEnum[trafficType];
+ 
++    if (hotspotPercent < 0 || hotspotPercent > 100) {
++        fatal("hotspot_percent must be between 0 and 100\n");
++    }
++    if (hotspotPercent > 0 &&
++        (hotspotDest < 0 || hotspotDest >= numDestinations)) {
++        fatal("hotspot_dest must identify one of the %d destinations\n",
++              numDestinations);
++    }
++
+     id = TESTER_NETWORK++;
+     DPRINTF(GarnetSyntheticTraffic,"Config Created: Name = %s , and id = %d\n",
+             name(), id);
+@@ -194,6 +205,17 @@ GarnetSyntheticTraffic::generatePkt()
+     if (singleDest >= 0)
+     {
+         destination = singleDest;
++    } else if (hotspotPercent > 0) {
++        unsigned hotspotDraw = random_mt.random<unsigned>(0, 99);
++        if (hotspotDraw < hotspotPercent || num_destinations == 1) {
++            destination = hotspotDest;
++        } else {
++            destination = random_mt.random<unsigned>(
++                0, num_destinations - 2);
++            if (destination >= hotspotDest) {
++                ++destination;
++            }
++        }
+     } else if (traffic == UNIFORM_RANDOM_) {
+         destination = random_mt.random<unsigned>(0, num_destinations - 1);
+     } else if (traffic == BIT_COMPLEMENT_) {
+diff --git a/configs/example/garnet_synth_traffic.py b/configs/example/garnet_synth_traffic.py
+index 0000000..0000000 100644
+--- a/configs/example/garnet_synth_traffic.py
++++ b/configs/example/garnet_synth_traffic.py
+@@ -110,6 +110,21 @@ parser.add_argument(
+                         Set to -1 to disable.",
+ )
+ 
++parser.add_argument(
++    "--hotspot-dest-id",
++    type=int,
++    default=-1,
++    help="Hotspot destination. Set to -1 to disable hotspot mix.",
++)
++
++parser.add_argument(
++    "--hotspot-percent",
++    type=int,
++    default=0,
++    help="Percentage sent to the hotspot destination. The remainder is "
++    "uniformly distributed across all other destinations.",
++)
++
+ parser.add_argument(
+     "--inj-vnet",
+     type=int,
+@@ -130,6 +146,8 @@ cpus = [
+         single_sender=args.single_sender_id,
+         single_dest=args.single_dest_id,
++        hotspot_dest=args.hotspot_dest_id,
++        hotspot_percent=args.hotspot_percent,
+         sim_cycles=args.sim_cycles,
+         traffic_type=args.synthetic,
+         inj_rate=args.injectionrate,
+         inj_vnet=args.inj_vnet,

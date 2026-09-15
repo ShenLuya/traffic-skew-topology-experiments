@@ -1,0 +1,88 @@
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+warn: The `get_runtime_isa` function is deprecated. Please migrate away from using this function.
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (128 Mbytes)
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (128 Mbytes)
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (128 Mbytes)
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (128 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/mem/ruby/network/garnet/GarnetNetwork.cc:107: info: Garnet version 3.0
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 23.0.0.1
+gem5 compiled Aug 11 2026 16:41:44
+gem5 started Aug 12 2026 11:15:46
+gem5 executing on 7ianwindows, pid 229
+command line: ./build/X86/gem5.opt -d formal_20260812_100m/dragonfly_hotspotmix_rate0.06_seed202 configs/example/garnet_synth_traffic.py --network=garnet --topology=dragonfly --num-cpus=64 --num-dirs=4 --injectionrate=0.06 --synthetic=uniform_random --routing-algorithm=0 --sim-cycles=100000000 --random-seed=202 --mesh-rows=4 --hotspot-dest-id=0 --hotspot-percent=20
+
+info: Standard input is not a terminal, disabling listeners.
+src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+src/mem/ruby/system/Sequencer.cc:606: warn: Replacement policy updates recently became the responsibility of SLICC state machines. Make sure to setMRU() near callbacks in .sm files!
+Exiting @ tick 100000000 because Network Tester completed simCycles

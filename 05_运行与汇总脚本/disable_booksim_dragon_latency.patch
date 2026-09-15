@@ -1,0 +1,12 @@
+diff --git a/src/networks/dragonfly.cpp b/src/networks/dragonfly.cpp
+--- a/src/networks/dragonfly.cpp
++++ b/src/networks/dragonfly.cpp
+@@ -35,7 +35,7 @@
+ #include "misc_utils.hpp"
+ 
+ 
+-#define DRAGON_LATENCY
++// #define DRAGON_LATENCY
+ 
+ int gG = 0;
+ int gP = 0;
