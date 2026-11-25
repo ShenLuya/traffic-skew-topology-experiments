@@ -45,10 +45,10 @@ def rate_tokens(value: float) -> list[str]:
 
 def main_log(topology: str, traffic: str, rate: float, seed: int) -> Path | None:
     if topology in {"mesh", "torus"}:
-        folder = REPO / "02_BookSim主实验" / "01_Mesh_Torus_64端点_5种子" / "logs"
+        folder = REPO / "02_booksim_main_experiments" / "01_mesh_torus_64_endpoints_5_seeds" / "logs"
         stems = [f"{topology}_{traffic}_rate{token}_seed{seed}.txt" for token in rate_tokens(rate)]
     else:
-        folder = REPO / "02_BookSim主实验" / "02_FatTree_64端点_5种子" / "logs"
+        folder = REPO / "02_booksim_main_experiments" / "02_fat_tree_64_endpoints_5_seeds" / "logs"
         stems = [f"fattree64_{traffic}_{token}_seed{seed}.txt" for token in rate_tokens(rate)]
     return next((folder / stem for stem in stems if (folder / stem).is_file()), None)
 
@@ -84,9 +84,9 @@ def check_manifest(errors: list[str]) -> int:
 def main() -> int:
     errors: list[str] = []
 
-    archived_mt = REPO / "01_最终汇总" / "mesh_torus_raw_runs.csv"
-    archived_ft = REPO / "01_最终汇总" / "fattree64_raw_runs.csv"
-    archived_pilot = REPO / "05_补充实验_热点位置_20260915" / "raw_runs.csv"
+    archived_mt = REPO / "01_final_summary" / "mesh_torus_raw_runs.csv"
+    archived_ft = REPO / "01_final_summary" / "fattree64_raw_runs.csv"
+    archived_pilot = REPO / "05_supplementary_hotspot_position_experiment_20260915" / "raw_runs.csv"
     copies = [
         (archived_mt, PAPER / "data" / "mesh_torus_raw_runs.csv"),
         (archived_ft, PAPER / "data" / "fattree64_raw_runs.csv"),
@@ -167,10 +167,10 @@ def main() -> int:
         if {int(row["seed"]) for row in rows} != PILOT_SEEDS or len(rows) != 3:
             errors.append(f"pilot seed coverage mismatch: {key}")
 
-    manifest_rows = read_csv(REPO / "02_BookSim主实验" / "01_Mesh_Torus_64端点_5种子" / "run_manifest.csv")
+    manifest_rows = read_csv(REPO / "02_booksim_main_experiments" / "01_mesh_torus_64_endpoints_5_seeds" / "run_manifest.csv")
     if len(manifest_rows) != 140:
         errors.append(f"expected 140 Mesh/Torus manifest rows, found {len(manifest_rows)}")
-    mt_root = REPO / "02_BookSim主实验" / "01_Mesh_Torus_64端点_5种子"
+    mt_root = REPO / "02_booksim_main_experiments" / "01_mesh_torus_64_endpoints_5_seeds"
     for topology in ("mesh", "torus"):
         for traffic in ("uniform", "hotspotmix"):
             log = main_log(topology, traffic, 0.02, 101)

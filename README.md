@@ -19,8 +19,8 @@ Python 3.10 or newer is recommended.
 python -m pip install -r requirements.txt
 python paper_reproduction/verify_archive.py
 python paper_reproduction/redraw_figures.py
-python "06_敏感性实验/热点比例敏感性_已完成_20261125/01_实验结果/collect_results.py"
-python "06_敏感性实验/热点比例敏感性_已完成_20261125/01_实验结果/plot_results.py"
+python "06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/01_results/collect_results.py"
+python "06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/01_results/plot_results.py"
 ```
 
 The main-archive verification command is read-only. The drawing commands
@@ -73,14 +73,14 @@ bound and is reported as an overloaded stress condition.
 | Path | Role |
 |---|---|
 | `paper_reproduction/` | Canonical paper-facing data, verifier, figure script, and generated figures |
-| `01_最终汇总/` | Historical consolidated CSV/Excel results and earlier inspection plots |
-| `02_BookSim主实验/01_Mesh_Torus_64端点_5种子/` | Mesh/Torus logs, four base configurations, and 140-run manifest |
-| `02_BookSim主实验/02_FatTree_64端点_5种子/` | Fat-Tree configurations and logs; the paper uses the 70 runs at its seven matched rates |
-| `02_BookSim主实验/03_Dragonfly_72端点_5种子/` | Unequal-size supplementary work, not part of the manuscript's matched three-topology comparison |
-| `05_补充实验_热点位置_20260915/` | Three-seed hotspot-position pilot and archived `hotspot_mix` source files |
-| `03_gem5审计实验_不用于主比较/` | Legacy system-level audit data; explicitly excluded from the paper comparison |
-| `05_运行与汇总脚本/` | Historical collection/plotting scripts; read its README before use |
-| `06_敏感性实验/热点比例敏感性_已完成_20261125/` | Completed 180-run hotspot-share sweep, raw logs, configurations, analysis scripts, figure, and isolated BookSim2 environment |
+| `01_final_summary/` | Historical consolidated CSV/Excel results and earlier inspection plots |
+| `02_booksim_main_experiments/01_mesh_torus_64_endpoints_5_seeds/` | Mesh/Torus logs, four base configurations, and 140-run manifest |
+| `02_booksim_main_experiments/02_fat_tree_64_endpoints_5_seeds/` | Fat-Tree configurations and logs; the paper uses the 70 runs at its seven matched rates |
+| `02_booksim_main_experiments/03_dragonfly_72_endpoints_5_seeds/` | Unequal-size supplementary work, not part of the manuscript's matched three-topology comparison |
+| `05_supplementary_hotspot_position_experiment_20260915/` | Three-seed hotspot-position pilot and archived `hotspot_mix` source files |
+| `03_gem5_audit_experiments_not_for_main_comparison/` | Legacy system-level audit data; explicitly excluded from the paper comparison |
+| `05_run_and_summary_scripts/` | Historical collection/plotting scripts; read its README before use |
+| `06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/` | Completed 180-run hotspot-share sweep, raw logs, configurations, analysis scripts, figure, and isolated BookSim2 environment |
 
 ## What is and is not verified
 
@@ -99,7 +99,7 @@ FA038B961C3AD40500C81B102B6E5BF79E6E3CDF16AF3D658B4774A3CA1585E2
 
 The exact modified `traffic.cpp` and `traffic.hpp` implementing
 `hotspot_mix` are archived in
-`05_补充实验_热点位置_20260915/booksim_hotspot_mix_source/`. The upstream
+`05_supplementary_hotspot_position_experiment_20260915/booksim_hotspot_mix_source/`. The upstream
 BookSim Git commit used to build the historical executable was not preserved,
 so a source-level rebuild cannot honestly be claimed to be bit-for-bit
 reproducible. This limitation is recorded rather than replaced by an invented
@@ -120,7 +120,7 @@ exit-code sidecars are retained inside the sensitivity package.
 
 The Dragonfly and gem5 folders are retained for audit history. They are not
 combined with the 64-endpoint BookSim comparison. In particular,
-`05_运行与汇总脚本/generate_main_figures.py` is a retired script that mixed
+`05_run_and_summary_scripts/generate_main_figures.py` is a retired script that mixed
 BookSim and gem5 results and must not be used for the manuscript.
 
 ## Citation and license

@@ -6,7 +6,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-BASE = Path(os.environ.get("BOOKSIM_RESULTS_DIR", Path(__file__).resolve().parents[1] / "01_最终汇总"))
+BASE = Path(os.environ.get("BOOKSIM_RESULTS_DIR", Path(__file__).resolve().parents[1] / "01_final_summary"))
 MAIN = BASE / "main_64endpoint_summary.csv"
 ALL = BASE / "all_topologies_summary.csv"
 SCAN = BASE / "dragonfly72_hotspot_boundary_scan.csv"

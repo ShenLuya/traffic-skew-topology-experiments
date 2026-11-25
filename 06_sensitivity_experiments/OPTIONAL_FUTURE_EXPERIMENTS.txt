@@ -1,0 +1,30 @@
+Optional future experiments (outside the current manuscript scope)
+
+The experiments below are possible extensions, not missing requirements for reproducing the submitted results.
+
+1. A matched-size Dragonfly study
+   The archived Dragonfly runs use 72 endpoints and therefore are not included in the current 64-endpoint comparison. A future study would need a clearly matched design before making direct topology rankings.
+
+2. Torus deterministic-routing and VC sensitivity
+   Routing: dim_order
+   Candidate VC counts: 2, 4, 8, 16
+   Buffer depth: fixed at 16 flits per VC
+   Traffic: uniform and hotspot_mix({0, 20%})
+   Offered rates: 0.02, 0.04, 0.06, 0.07, 0.075, 0.08, 0.10
+   Seeds: 101, 202, 303, 404, 505
+
+3. Torus adaptive-routing buffer sensitivity
+   Routing: min_adapt
+   VC count: fixed at 4
+   Candidate buffer depths: 4, 8, 16, 32 flits per VC
+   Other conditions as above.
+
+4. Direct Torus routing comparison
+   Compare dim_order and min_adapt at the same VC count and buffer depth, with claims restricted to this controlled routing experiment.
+
+5. Broader hotspot-position coverage
+   Extend beyond nodes 0, 3, and 27 if a full spatial study becomes a research objective.
+
+The hotspot-percentage sensitivity experiment proposed in the earlier planning notes has already been completed. It covers 10%, 20%, 30%, and 40% hotspot shares at offered rates 0.02, 0.03, and 0.04 with five seeds.
+
+Any future formal experiment should preserve its configurations, raw logs, exit-code sidecars, run-level CSV, summary CSV, simulator provenance, and checksums without overwriting the archived data in this repository.

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-const base = process.env.BOOKSIM_RESULTS_DIR || path.resolve(scriptDir, "../01_最终汇总");
+const base = process.env.BOOKSIM_RESULTS_DIR || path.resolve(scriptDir, "../01_final_summary");
 const outputPath = path.join(base, "BookSim_final_results_20260812.xlsx");
 
 function parseCsv(text) {

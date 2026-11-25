@@ -18,7 +18,7 @@ From the repository root:
 
 ```bash
 python paper_reproduction/verify_archive.py
-python "06_敏感性实验/热点比例敏感性_已完成_20261125/01_实验结果/collect_results.py"
+python "06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/01_results/collect_results.py"
 ```
 
 The main verifier is read-only. The sensitivity collector reparses archived
@@ -48,7 +48,7 @@ Install the two plotting dependencies and run:
 ```bash
 python -m pip install -r requirements.txt
 python paper_reproduction/redraw_figures.py
-python "06_敏感性实验/热点比例敏感性_已完成_20261125/01_实验结果/plot_results.py"
+python "06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/01_results/plot_results.py"
 ```
 
 Outputs are written under `paper_reproduction/generated/`:
@@ -63,7 +63,7 @@ Outputs are written under `paper_reproduction/generated/`:
 
 The sensitivity script writes its reference manuscript figure to:
 
-- `06_敏感性实验/热点比例敏感性_已完成_20261125/01_实验结果/figures/hotspot_percentage_latency.{pdf,png}`
+- `06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/01_results/figures/hotspot_percentage_latency.{pdf,png}`
 
 The tracked files in `paper_reproduction/figures/` are the reference outputs
 used by the current manuscript. They are not overwritten by default.
@@ -109,7 +109,7 @@ arbitrary upstream revision is identical to the historical base.
 Four recovered base configurations are in:
 
 ```text
-02_BookSim主实验/01_Mesh_Torus_64端点_5种子/configs/
+02_booksim_main_experiments/01_mesh_torus_64_endpoints_5_seeds/configs/
 ```
 
 `run_manifest.csv` lists all 140 historical topology/traffic/rate/seed
@@ -124,7 +124,7 @@ Set `BOOKSIM_BIN` and use the supplied runner only when a rerun is intended:
 
 ```bash
 BOOKSIM_BIN=/absolute/path/to/booksim \
-  bash 02_BookSim主实验/01_Mesh_Torus_64端点_5种子/run_from_manifest.sh smoke
+  bash 02_booksim_main_experiments/01_mesh_torus_64_endpoints_5_seeds/run_from_manifest.sh smoke
 ```
 
 The default `smoke` mode writes to a new `rerun_logs/` directory. The script
@@ -143,7 +143,7 @@ results.
 The completed sensitivity package is self-contained under:
 
 ```text
-06_敏感性实验/热点比例敏感性_已完成_20261125/
+06_sensitivity_experiments/hotspot_percentage_sensitivity_completed_20261125/
 ```
 
 It retains the BookSim2 source tree at Git commit
@@ -151,7 +151,7 @@ It retains the BookSim2 source tree at Git commit
 implementation, the verified binary, compiler provenance, all 180
 configurations and logs, and the batch runner. Its 30 runs overlapping
 the historical 20% archive match exactly at the seed and metric level. Read
-`README_先看.md` and `01_实验结果/experiment_report.md` before rerunning; the
+`README_FIRST.md` and `01_results/experiment_report.md` before rerunning; the
 archived results should not be overwritten.
 
 ## Provenance boundaries and known limitations

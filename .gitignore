@@ -1,7 +1,7 @@
 __pycache__/
 *.py[cod]
 paper_reproduction/generated/
-02_BookSim主实验/01_Mesh_Torus_64端点_5种子/rerun_logs/
-05_补充实验_热点位置_20260915/rerun_output/
-05_运行与汇总脚本/collected_results/
+02_booksim_main_experiments/01_mesh_torus_64_endpoints_5_seeds/rerun_logs/
+05_supplementary_hotspot_position_experiment_20260915/rerun_output/
+05_run_and_summary_scripts/collected_results/
 

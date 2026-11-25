@@ -19,7 +19,7 @@ python paper_reproduction/redraw_figures.py
   `BOOKSIM_ROOT` and optionally `BOOKSIM_RESULTS_OUTPUT`; its default output is
   a new `collected_results/` folder beside the script.
 - `build_final_results_workbook.mjs` reads `BOOKSIM_RESULTS_DIR` or defaults to
-  the repository's `01_最终汇总/`. It depends on a nonstandard historical
+  the repository's `01_final_summary/`. It depends on a nonstandard historical
   workbook package and is not required for verification.
 - Shell scripts named with 20260812 reproduce historical batch layouts and may
   assume a Linux BookSim working tree. Review them before running. They are not

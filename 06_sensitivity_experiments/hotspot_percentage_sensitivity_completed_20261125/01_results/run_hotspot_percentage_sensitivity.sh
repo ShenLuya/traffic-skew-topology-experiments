@@ -3,7 +3,7 @@ set -euo pipefail
 
 mode="${1:-smoke}"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-default_booksim_bin="$(cd "$script_dir/../02_BookSim2复现环境/src" && pwd)/booksim"
+default_booksim_bin="$(cd "$script_dir/../02_booksim2_reproduction_environment/src" && pwd)/booksim"
 booksim_bin="${BOOKSIM_BIN:-$default_booksim_bin}"
 run_timeout="${RUN_TIMEOUT_SECONDS:-180}"
 

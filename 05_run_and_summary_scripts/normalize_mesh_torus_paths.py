@@ -7,11 +7,11 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 TARGETS = (
-    REPO / "01_最终汇总" / "mesh_torus_raw_runs.csv",
-    REPO / "02_BookSim主实验" / "01_Mesh_Torus_64端点_5种子" / "raw_runs.csv",
+    REPO / "01_final_summary" / "mesh_torus_raw_runs.csv",
+    REPO / "02_booksim_main_experiments" / "01_mesh_torus_64_endpoints_5_seeds" / "raw_runs.csv",
     REPO / "paper_reproduction" / "data" / "mesh_torus_raw_runs.csv",
 )
-PREFIX = "02_BookSim主实验/01_Mesh_Torus_64端点_5种子/logs"
+PREFIX = "02_booksim_main_experiments/01_mesh_torus_64_endpoints_5_seeds/logs"
 
 
 def normalize(path: Path) -> int:

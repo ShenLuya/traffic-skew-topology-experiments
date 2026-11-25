@@ -29,7 +29,7 @@ def main() -> None:
         "requirements.txt",
         "CITATION.cff",
         "LICENSE_SELECTION_REQUIRED.md",
-        "请先看_目录说明.txt",
+        "README_DIRECTORY_GUIDE.txt",
     ):
         paths.add(REPO / name)
 
@@ -43,30 +43,30 @@ def main() -> None:
     )
     paths.update(
         {
-            REPO / "01_最终汇总" / "main_64endpoint_summary.csv",
-            REPO / "01_最终汇总" / "mesh_torus_raw_runs.csv",
-            REPO / "01_最终汇总" / "fattree64_raw_runs.csv",
+            REPO / "01_final_summary" / "main_64endpoint_summary.csv",
+            REPO / "01_final_summary" / "mesh_torus_raw_runs.csv",
+            REPO / "01_final_summary" / "fattree64_raw_runs.csv",
         }
     )
 
-    mt = REPO / "02_BookSim主实验" / "01_Mesh_Torus_64端点_5种子"
+    mt = REPO / "02_booksim_main_experiments" / "01_mesh_torus_64_endpoints_5_seeds"
     for name in ("README.md", "raw_runs.csv", "summary.csv", "run_manifest.csv", "run_from_manifest.sh", "build_run_manifest.py"):
         paths.add(mt / name)
     paths.update(path for path in (mt / "configs").glob("*.conf") if path.is_file())
     paths.update(path for path in (mt / "logs").glob("*.txt") if path.is_file())
 
-    ft = REPO / "02_BookSim主实验" / "02_FatTree_64端点_5种子"
+    ft = REPO / "02_booksim_main_experiments" / "02_fat_tree_64_endpoints_5_seeds"
     paths.update(path for path in (ft / "configs").glob("*.conf") if path.is_file() and paper_rate(path))
     paths.update(path for path in (ft / "logs").glob("*.txt") if path.is_file() and paper_rate(path))
 
-    pilot = REPO / "05_补充实验_热点位置_20260915"
+    pilot = REPO / "05_supplementary_hotspot_position_experiment_20260915"
     for name in ("README.md", "raw_runs.csv", "summary.csv", "comparison_with_node0.csv", "run_hotspot_position_pilot.sh", "summarize_hotspot_position_pilot.py"):
         paths.add(pilot / name)
     paths.update(path for path in (pilot / "configs").glob("*.conf") if path.is_file())
     paths.update(path for path in (pilot / "logs").glob("*.txt") if path.is_file())
     paths.update(path for path in (pilot / "booksim_hotspot_mix_source").rglob("*") if path.is_file())
 
-    sensitivity = REPO / "06_敏感性实验" / "热点比例敏感性_已完成_20261125"
+    sensitivity = REPO / "06_sensitivity_experiments" / "hotspot_percentage_sensitivity_completed_20261125"
     paths.update(
         path
         for path in sensitivity.rglob("*")
