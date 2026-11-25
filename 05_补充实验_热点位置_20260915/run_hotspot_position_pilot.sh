@@ -3,13 +3,14 @@ set -euo pipefail
 
 mode="${1:-all}"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-booksim_bin="${BOOKSIM_BIN:-/home/shenluya/booksim2/src/booksim}"
-config_dir="$script_dir/configs"
-log_dir="$script_dir/logs"
+booksim_bin="${BOOKSIM_BIN:-}"
+output_dir="${PILOT_OUTPUT_DIR:-$script_dir/rerun_output}"
+config_dir="$output_dir/configs"
+log_dir="$output_dir/logs"
 mkdir -p "$config_dir" "$log_dir"
 
-if [[ ! -x "$booksim_bin" ]]; then
-  echo "BookSim executable not found: $booksim_bin" >&2
+if [[ -z "$booksim_bin" || ! -x "$booksim_bin" ]]; then
+  echo "Set BOOKSIM_BIN to an executable BookSim binary." >&2
   exit 2
 fi
 

@@ -1,0 +1,10 @@
+HOTSPOT PERCENTAGE SENSITIVITY VERIFICATION
+manifest_rows=180
+parsed_runs=180
+summary_cells=36
+converged_stops=167
+maximum_sample_stops=10
+threshold_exits=3
+process_exit_codes={0: 3, 255: 177}
+historical_20pct_exact_matches=30/30
+verification_status=VERIFIED

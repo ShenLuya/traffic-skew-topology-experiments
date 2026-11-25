@@ -1,0 +1,2 @@
+run_id,topology,routing,hotspot_percentage,injection_rate,seed,config_file,log_file
+smoke_mesh_hotspot20_rate0.02_seed101,mesh,dor,20,0.02,101,smoke_configs/smoke_mesh_hotspot20_rate0.02_seed101.conf,smoke_logs/smoke_mesh_hotspot20_rate0.02_seed101.txt

@@ -1,10 +1,18 @@
+"""RETIRED: historical mixed-simulator figure prototype.
+
+This file is retained only to document an earlier analysis attempt. It mixes
+BookSim Mesh/Torus data with gem5 Fat-Tree/Dragonfly data and is not valid for
+the manuscript. Use ``paper_reproduction/redraw_figures.py`` instead.
+"""
+
+import os
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
-ROOT = Path.home() / "Documents" / "\u79d1\u7814"
+ROOT = Path(os.environ.get("LEGACY_RESULTS_ROOT", Path(__file__).resolve().parent / "legacy_inputs"))
 DATA_ROOT = ROOT / "paper_results_clean"
 OUT = DATA_ROOT / "final_main_figures_clean"
 
@@ -217,6 +225,10 @@ def plot_ldf(ldf):
 
 
 def main():
+    raise SystemExit(
+        "RETIRED SCRIPT: mixed BookSim/gem5 figures are not comparable. "
+        "Use paper_reproduction/redraw_figures.py."
+    )
     setup_style()
     booksim = load_booksim()
     gem5 = load_gem5()

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 import csv
 import math
+import os
 import shutil
 from pathlib import Path
 
 HOME = Path.home()
-BOOKSIM = HOME / "booksim2"
-OUTPUT = Path("/mnt/c/Users/ShenLuya/Documents/科研/final_results_20260812")
+BOOKSIM = Path(os.environ.get("BOOKSIM_ROOT", HOME / "booksim2"))
+OUTPUT = Path(os.environ.get("BOOKSIM_RESULTS_OUTPUT", Path(__file__).resolve().parent / "collected_results"))
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
 SOURCES = {

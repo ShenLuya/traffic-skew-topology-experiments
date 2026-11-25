@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import csv
+import os
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-BASE = Path(__file__).resolve().parent / "final_results_20260812"
+BASE = Path(os.environ.get("BOOKSIM_RESULTS_DIR", Path(__file__).resolve().parents[1] / "01_最终汇总"))
 MAIN = BASE / "main_64endpoint_summary.csv"
 ALL = BASE / "all_topologies_summary.csv"
 SCAN = BASE / "dragonfly72_hotspot_boundary_scan.csv"

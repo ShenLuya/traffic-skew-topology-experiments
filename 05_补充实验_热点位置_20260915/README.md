@@ -6,10 +6,17 @@ This preliminary experiment extends the completed 64-endpoint BookSim study.
 - Traffic: `hotspot_mix({node,20})`
 - New hotspot nodes: 3 (edge) and 27 (interior)
 - Injection rates: 0.06, 0.075, 0.08 flits/node/cycle
-- Preliminary seeds: 101, 202, 303
+- Exploratory matched seeds: 101, 202, 303
 - Existing node-0 results remain unchanged and are used as the Mesh corner baseline.
 
-The pilot is intended to support manuscript drafting. Before final submission, extend each condition to seeds 404 and 505 and archive the exact `hotspot_mix` source patch used to build BookSim.
+The three-seed design is intentional. This is an exploratory position-sensitivity
+pilot, not a second confirmatory five-seed experiment. The manuscript labels it
+accordingly and does not generalize beyond the tested positions and rates.
+
+Nodes 0, 3, and 27 represent three positional classes in the 8 x 8 Mesh: a
+corner, a non-corner boundary node, and an interior node. The same terminal
+labels are retained in Torus and Fat-Tree for a matched exploratory comparison;
+they do not imply that those topologies have identical geometric roles.
 
 ## Run status (2026-09-15)
 
@@ -36,3 +43,11 @@ The exact `traffic.cpp` and `traffic.hpp` used for `hotspot_mix` are archived in
 The comparison uses node-0 seeds 101, 202, and 303 so that all means use the same
 three seeds. See `PRELIMINARY_RESULTS.md` for paper-writing conclusions and
 `summary.csv` / `comparison_with_node0.csv` for the numeric results.
+
+For a new rerun, set `BOOKSIM_BIN` explicitly. The runner writes to
+`rerun_output/` by default and does not overwrite the archived `configs/` or
+`logs/` folders:
+
+```bash
+BOOKSIM_BIN=/absolute/path/to/booksim bash run_hotspot_position_pilot.sh smoke
+```
